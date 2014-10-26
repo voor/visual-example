@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="visualEx" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="visualEx" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="visualEx" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="visualEx" class="no-js">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Visual Example</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- build:css(.tmp) /styles/main.css -->
+<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" media="all" />
+<link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="all" />
+<link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" media="all" />
+<link href="bower_components/nvd3/nv.d3.css" rel="stylesheet" />
+<!-- endbuild -->
+</head>
+<body>
+	<div class="container" data-ng-controller="indexCtrl">
+
+		<div class="row">
+			<div class="pull-right">
+				<!-- Connect button. -->
+				<button data-ng-hide="isConnected()" type="button" data-ng-click="connect()" class="btn btn-success">
+					<i class="fa fa-sign-in fa-fw"></i> Connect
+				</button>
+				<button data-ng-show="isConnected()" type="button" data-ng-click="disconnect()" class="btn btn-danger">
+					<i class="fa fa-sign-out fa-fw"></i> Disconnect
+				</button>
+			</div>
+		</div>
+		<!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+		<!-- You would never directly reference the widgets on the index page, they'd be provided through a router or some other mechanism.  That's outside of the scope of this example, so they are directly here. -->
+		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<results-graph graph-width=350 graph-height=550></results-graph>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<results-table></results-table>
+			</div>
+		</div>
+		<h2>This is just the raw data coming in...</h2>
+		<pre data-ng-bind="data | json"></pre>
+	</div>
+
+
+
+	<!-- Outside of the scope of this example is the Gulp/Grunt build process.  You wouldn't have this in a production environment.  
+	You would either reference the CDN for some of the libraries, and compile the rest, or just compile the whole thing if you are installed on an internal network. -->
+	<!-- build:js(blah blah) /scripts/scripts.js -->
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/d3/d3.min.js"></script>
+	<script src="bower_components/nvd3/nv.d3.min.js"></script>
+	<script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+	<script src="components/widget-sample/data-service.js"></script>
+	<script src="components/widget-sample/cache-service.js"></script>
+	<script src="components/widget-sample/results-directive.js"></script>
+	<script src="components/widget-sample/widget-sample.js"></script>
+	<script src="app.js"></script>
+	<!-- endbuild -->
+</body>
+</html>

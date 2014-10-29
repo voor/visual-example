@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Visual Example by voor</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Visual Example</h1>
+        <p>Very basic example of some visualizations in angularjs</p>
+
+        <p class="view"><a href="https://github.com/voor/visual-example">View the Project on GitHub <small>voor/visual-example</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/voor/visual-example/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/voor/visual-example/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/voor/visual-example">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="visual-example---an-example-of-various-visualizations" class="anchor" href="#visual-example---an-example-of-various-visualizations"><span class="octicon octicon-link"></span></a>visual-example - An example of various visualizations</h1>
+
+<p>This is sort of a thrown together, lots of cut corners, example of some visualization widgets.</p>
+
+<p>A lot of assumptions were made about the backend (where the data is derived from).</p>
+
+<p>This is by now means something to be used in production -- it's just meant to showcase some very basic GUI interaction.</p>
+
+<p>The "how to" guide is essentially a copy and paste from the angular-seed, which this set-up is loosely based off of.</p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>To get you started you can simply clone the visual-example repository and install the dependencies:</p>
+
+<h3>
+<a name="prerequisites" class="anchor" href="#prerequisites"><span class="octicon octicon-link"></span></a>Prerequisites</h3>
+
+<p>You need git to clone the visual-example repository. You can get git from
+<a href="http://git-scm.com/">http://git-scm.com/</a>.</p>
+
+<p>I also use a number of node.js tools to initialize and test visual-example. You must have node.js and
+its package manager (npm) installed.  You can get them from <a href="http://nodejs.org/">http://nodejs.org/</a>.</p>
+
+<h3>
+<a name="clone-visual-example" class="anchor" href="#clone-visual-example"><span class="octicon octicon-link"></span></a>Clone visual-example</h3>
+
+<p>Clone the visual-example repository using <a href="http://git-scm.com/">git</a>:</p>
+
+<pre><code>git clone https://github.com/voor/visual-example.git
+cd visual-example
+</code></pre>
+
+<h3>
+<a name="install-dependencies" class="anchor" href="#install-dependencies"><span class="octicon octicon-link"></span></a>Install Dependencies</h3>
+
+<p>There are two kinds of dependencies in this project: tools and angular framework code.  The tools help
+you manage and test the application.</p>
+
+<ul>
+<li>You get the tools you depend upon via <code>npm</code>, the <a href="https://www.npmjs.org/">node package manager</a>.</li>
+<li>You get the angular code via <code>bower</code>, a <a href="http://bower.io">client-side code package manager</a>.</li>
+</ul>
+
+<p>I have preconfigured <code>npm</code> to automatically run <code>bower</code> so you can simply do:</p>
+
+<pre><code>npm install
+</code></pre>
+
+<p>Behind the scenes this will also call <code>bower install</code>.  You should find that you have two new
+folders in your project.</p>
+
+<ul>
+<li>
+<code>node_modules</code> - contains the npm packages for the tools we need</li>
+<li>
+<code>app/bower_components</code> - contains the angular framework files</li>
+</ul>
+
+<p><em>Note that the <code>bower_components</code> folder would normally be installed in the root folder but
+angular-seed changes this location through the <code>.bowerrc</code> file.  Putting it in the app folder makes
+it easier to serve the files by a webserver.</em></p>
+
+<h3>
+<a name="run-the-application" class="anchor" href="#run-the-application"><span class="octicon octicon-link"></span></a>Run the Application</h3>
+
+<p>I have preconfigured the project with a simple development web server.  The simplest way to start
+this server is:</p>
+
+<pre><code>npm start
+</code></pre>
+
+<p>Now browse to the app at <code>http://localhost:8000/app/index.html</code>.</p>
+
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
+
+<p>There are two kinds of tests in the angular-seed application: Unit tests and End to End tests.</p>
+
+<h3>
+<a name="running-unit-tests" class="anchor" href="#running-unit-tests"><span class="octicon octicon-link"></span></a>Running Unit Tests</h3>
+
+<p>The angular-seed app comes preconfigured with unit tests. These are written in
+<a href="http://jasmine.github.io">Jasmine</a>, which we run with the <a href="http://karma-runner.github.io">Karma Test Runner</a>. I provide a Karma
+configuration file to run them.</p>
+
+<ul>
+<li>the configuration is found at <code>karma.conf.js</code>
+</li>
+<li>the unit tests are found next to the code they are testing and are named as <code>..._test.js</code>.</li>
+</ul>
+
+<p>The easiest way to run the unit tests is to use the supplied npm script:</p>
+
+<pre><code>npm test
+</code></pre>
+
+<p>This script will start the Karma test runner to execute the unit tests. Moreover, Karma will sit and
+watch the source and test files for changes and then re-run the tests whenever any of them change.
+This is the recommended strategy; if your unit tests are being run every time you save a file then
+you receive instant feedback on any changes that break the expected code functionality.</p>
+
+<p>You can also ask Karma to do a single run of the tests and then exit.  This is useful if you want to
+check that a particular version of the code is operating as expected.  The project contains a
+predefined script to do this:</p>
+
+<pre><code>npm run test-single-run
+</code></pre>
+
+<h3>
+<a name="end-to-end-testing" class="anchor" href="#end-to-end-testing"><span class="octicon octicon-link"></span></a>End to end testing</h3>
+
+<p>The angular-seed app comes with end-to-end tests, again written in <a href="http://jasmine.github.io">Jasmine</a>. These tests
+are run with the <a href="https://github.com/angular/protractor">Protractor</a> End-to-End test runner.  It uses native events and has
+special features for Angular applications.</p>
+
+<ul>
+<li>the configuration is found at <code>e2e-tests/protractor-conf.js</code>
+</li>
+<li>the end-to-end tests are found in <code>e2e-tests/scenarios.js</code>
+</li>
+</ul>
+
+<p>Protractor simulates interaction with our web app and verifies that the application responds
+correctly. Therefore, our web server needs to be serving up the application, so that Protractor
+can interact with it.</p>
+
+<pre><code>npm start
+</code></pre>
+
+<p>In addition, since Protractor is built upon WebDriver we need to install this.  The angular-seed
+project comes with a predefined script to do this:</p>
+
+<pre><code>npm run update-webdriver
+</code></pre>
+
+<p>This will download and install the latest version of the stand-alone WebDriver tool.</p>
+
+<p>Once you have ensured that the development web server hosting our application is up and running
+and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:</p>
+
+<pre><code>npm run protractor
+</code></pre>
+
+<p>This script will execute the end-to-end tests against the application being hosted on the
+development server.</p>
+
+<h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>For more information on AngularJS please check out <a href="http://angularjs.org/">http://angularjs.org/</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/voor">voor</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

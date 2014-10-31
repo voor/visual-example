@@ -116,3 +116,48 @@ function(dataService, $log) {
         templateUrl : 'components/widget-sample/results-graph.html'
     };
 } ])
+
+/**
+ * Last widget that is a map.
+ */
+.directive('resultsMap', [ 'dataService', '$log',
+
+function(dataService, $log) {
+
+    return {
+        restrict : 'E',
+        transclude : true,
+        replace : true,
+        // We do this to isolate the scope. We don't want our widgets messing with the other stuff on the page.
+        scope : {},
+        controller : function($scope, dataService, $log) {
+
+            $scope.markers = {};
+            $scope.snap = true;
+            $scope.center = {};
+
+            $scope.incoming = function(data) {
+                $log.debug("map Got: " + angular.toJson(data));
+
+                if (data.loc != null) {
+                    $log.debug("Add marker.");
+                    $scope.markers[data.ip] = {
+                        lat : data.loc.lat,
+                        lng : data.loc.lng,
+                        message : data.owner,
+                        focus : true,
+                        draggable : false
+                    };
+                }
+                if ($scope.snap) {
+                    $scope.center.lat = data.loc.lat;
+                    $scope.center.lng = data.loc.lng;
+                }
+
+            };
+            dataService.addListener($scope.incoming);
+
+        },
+        templateUrl : 'components/widget-sample/results-map.html'
+    };
+} ])

@@ -3,6 +3,9 @@
 		<h3 class="panel-title">Results Graph Widget Example</h3>
 	</div>
 	<div class="panel-body">
+		<span class="help-block">Very basic stacked bar chart that changes dynamically as data comes in. Since the IP are randomly generated, for the
+			purposes of this example the charts are actually divided by company (owner). It's a very simple fix to 'pivot' that data. Moreover, the primary
+			stacked groups are on the types of viri, which is also a very small fix. It just looked too crowded otherwise.</span>
 		<nvd3-multi-bar-horizontal-chart height="600" objectequality="true" x="xFunction()" y="yFunction()" margin="{left:0,top:45,bottom:0,right:0}"
 			data="data" showControls=true interactive="true" tooltips="true" tooltipcontent="toolTipContentFunction()"> <svg></svg>
 		</nvd3-multi-bar-horizontal-chart>

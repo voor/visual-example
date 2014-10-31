@@ -99,7 +99,11 @@ angular.module('visualEx.widgetSample.dataService', [])
             "ip" : getRandomIp(getRandomInt(0, 99)),
             "virus" : getRandomVirusGroup(),
             "owner" : getRandomOwner(int),
-            "function" : getRandomFunction(func)
+            "function" : getRandomFunction(func),
+            loc : {
+                lat : getRandomInt(0, 50),
+                lng : getRandomInt(0, 50)
+            }
         });
 
         return deferred.promise;

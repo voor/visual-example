@@ -1,7 +1,7 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('visualEx', [ 'visualEx.widgetSample', 'nvd3ChartDirectives' ])
+angular.module('visualEx', [ 'visualEx.widgetSample', 'nvd3ChartDirectives', "leaflet-directive" ])
 
 /**
  * Index controller. You would never normally define a controller here, but here it is!

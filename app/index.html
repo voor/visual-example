@@ -17,14 +17,21 @@
 <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" media="all" />
 <link href="bower_components/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" media="all" />
 <link href="bower_components/nvd3/nv.d3.css" rel="stylesheet" />
+<link href="bower_components/leaflet/dist/leaflet.css" rel="stylesheet" />
 <!-- endbuild -->
 </head>
 <body>
 	<div class="container" data-ng-controller="indexCtrl">
+		<div class="jumbotron">
+			<h1>Visual Example</h1>
+			<div class="row">
+				<div class="col-sm-12">Very simple angular widgets that perform some simple visual tasks. This page is meant to show a basic code sample,
+					and then some possibilities with Angular JS. The stylesheet for the page is Bootstrap, which enables the components to seamlessly "stack" when
+					the screen gets smaller.</div>
+			</div>
 
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="pull-right">
+			<div class="row">
+				<div class="col-sm-12 col-md-6">
 					<!-- Connect button. -->
 					<button data-ng-hide="isConnected()" type="button" data-ng-click="connect()" class="btn btn-success">
 						<i class="fa fa-sign-in fa-fw"></i> Connect
@@ -32,8 +39,13 @@
 					<button data-ng-show="isConnected()" type="button" data-ng-click="disconnect()" class="btn btn-danger">
 						<i class="fa fa-sign-out fa-fw"></i> Disconnect
 					</button>
+					<span class="help-block">All of the data displayed on this page is dynamically generated, so you'll need to push the button for anything
+						to show up.</span>
 				</div>
+
 			</div>
+
+
 		</div>
 		<!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -41,6 +53,9 @@
 
 		<!-- You would never directly reference the widgets on the index page, they'd be provided through a router or some other mechanism.  That's outside of the scope of this example, so they are directly here. -->
 		<div class="row">
+			<div class="col-xs-12 col-md-6">
+				<results-map></results-map>
+			</div>
 			<div class="col-xs-12 col-md-6">
 				<results-graph></results-graph>
 			</div>
@@ -61,6 +76,8 @@
 	<script src="bower_components/d3/d3.min.js"></script>
 	<script src="bower_components/nvd3/nv.d3.min.js"></script>
 	<script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>
+	<script src="bower_components/leaflet/dist/leaflet.js"></script>
+	<script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
 	<script src="components/widget-sample/data-service.js"></script>
 	<script src="components/widget-sample/cache-service.js"></script>
 	<script src="components/widget-sample/results-directive.js"></script>

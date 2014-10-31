@@ -23,14 +23,16 @@
 	<div class="container" data-ng-controller="indexCtrl">
 
 		<div class="row">
-			<div class="pull-right">
-				<!-- Connect button. -->
-				<button data-ng-hide="isConnected()" type="button" data-ng-click="connect()" class="btn btn-success">
-					<i class="fa fa-sign-in fa-fw"></i> Connect
-				</button>
-				<button data-ng-show="isConnected()" type="button" data-ng-click="disconnect()" class="btn btn-danger">
-					<i class="fa fa-sign-out fa-fw"></i> Disconnect
-				</button>
+			<div class="col-xs-12">
+				<div class="pull-right">
+					<!-- Connect button. -->
+					<button data-ng-hide="isConnected()" type="button" data-ng-click="connect()" class="btn btn-success">
+						<i class="fa fa-sign-in fa-fw"></i> Connect
+					</button>
+					<button data-ng-show="isConnected()" type="button" data-ng-click="disconnect()" class="btn btn-danger">
+						<i class="fa fa-sign-out fa-fw"></i> Disconnect
+					</button>
+				</div>
 			</div>
 		</div>
 		<!--[if lt IE 7]>
@@ -40,7 +42,7 @@
 		<!-- You would never directly reference the widgets on the index page, they'd be provided through a router or some other mechanism.  That's outside of the scope of this example, so they are directly here. -->
 		<div class="row">
 			<div class="col-xs-12 col-md-6">
-				<results-graph graph-width=350 graph-height=550></results-graph>
+				<results-graph></results-graph>
 			</div>
 			<div class="col-xs-12 col-md-6">
 				<results-table></results-table>
@@ -56,7 +58,6 @@
 	You would either reference the CDN for some of the libraries, and compile the rest, or just compile the whole thing if you are installed on an internal network. -->
 	<!-- build:js(blah blah) /scripts/scripts.js -->
 	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
 	<script src="bower_components/d3/d3.min.js"></script>
 	<script src="bower_components/nvd3/nv.d3.min.js"></script>
 	<script src="bower_components/angularjs-nvd3-directives/dist/angularjs-nvd3-directives.js"></script>

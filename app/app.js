@@ -30,3 +30,12 @@ function($scope, dataService, $log, cacheService) {
     };
 
 } ])
+
+.run(function($templateCache, $http) {
+    $http.get('components/widget-sample/results-table.html', {
+        cache : $templateCache
+    });
+    $http.get('components/widget-sample/results-graph.html', {
+        cache : $templateCache
+    });
+});

@@ -12,15 +12,7 @@ angular.module('visualEx.widgetSample.cacheService', [ 'visualEx.widgetSample.da
 .service('cacheService', [ '$log', 'dataService', '$q', function($log, dataService, $q) {
 
     var data = {
-        "Anderson Services" : {
-            "10.209.130.213" : {
-                "ip" : "10.209.130.213",
-                "virus" : [ "Botnet", "SPAM", "StealCreds" ],
-                "function" : "ftp server",
-                "owner" : "Anderson Services"
-            }
-        },
-        "Unknown" : {}
+
     };
 
     // Very ugly doing this much process on the client side, but wanted to preserve the current API.

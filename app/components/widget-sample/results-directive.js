@@ -133,6 +133,7 @@ function(dataService, $log) {
         controller : function($scope, dataService, $log) {
 
             $scope.markers = {};
+            $scope.markerCount = 0;
             $scope.snap = true;
             $scope.center = {};
 
@@ -141,13 +142,14 @@ function(dataService, $log) {
 
                 if (data.loc != null) {
                     $log.debug("Add marker.");
-                    $scope.markers[data.ip] = {
+                    $scope.markers[$scope.markerCount] = {
                         lat : data.loc.lat,
                         lng : data.loc.lng,
-                        message : data.owner,
+                        message : "<h3>" + data.ip + " - " + data.owner + "<small>(" + data.loc.lat + ", " + data.loc.lng + ")</small></h3><p>Virus: " + data.virus + "</p><p>Function: " + data["function"] + "</p>",
                         focus : true,
                         draggable : false
                     };
+                    $scope.markerCount++;
                 }
                 if ($scope.snap) {
                     $scope.center.lat = data.loc.lat;
